@@ -40,6 +40,6 @@ trait PasswordLengthChecker
      */
     public function isPasswordTooLong(string $password): bool
     {
-        return \strlen($password) > PasswordHasherInterface::MAX_PASSWORD_LENGTH;
+        return \mb_strlen($password, '8bit') > PasswordHasherInterface::MAX_PASSWORD_LENGTH;
     }
 }
