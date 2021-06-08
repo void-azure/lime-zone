@@ -99,7 +99,7 @@ final class StandardPasswordHasher implements PasswordHasherInterface
     /**
      * Configure the hasher options.
      *
-     * @param OptionsResolver The symfony options resolver.
+     * @param \Symfony\Component\OptionsResolver\OptionsResolver The symfony options resolver.
      *
      * @return void Returns nothing.
      */
