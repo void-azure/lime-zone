@@ -25,6 +25,8 @@
 
 namespace LimeZone\Auth\Xsrf;
 
+use RuntimeException;
+
 /**
  * Prevents long user-supplied tokens.
  */
@@ -39,7 +41,7 @@ trait PreventTooLongTokens
      */
     public function checkTooLongTokens(string $user): bool
     {
-        if (mb_strlen($user, '8bit') > XsrfInterface::MAX_TOKEN_LENGTH) {
+        if (\mb_strlen($user, '8bit') > XsrfInterface::MAX_TOKEN_LENGTH) {
             RuntimeException('The xsrf token supplied is too long.');
         }
         return $user;
