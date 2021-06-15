@@ -39,7 +39,7 @@ trait PreventTooLongTokens
      *
      * @return string The user-supplied token.
      */
-    public function checkTooLongTokens(string $user): bool
+    public function checkTooLongTokens(string $user): string
     {
         if (\mb_strlen($user, '8bit') > XsrfInterface::MAX_TOKEN_LENGTH) {
             RuntimeException('The xsrf token supplied is too long.');
